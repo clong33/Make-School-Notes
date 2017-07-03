@@ -37,7 +37,7 @@ class ListNotesTableViewController: UITableViewController {
         let row = indexPath.row
         
         // 2
-        let note = notes[row]
+        let note = notes[notes.count - 1 - row]
         
         // 3
         cell.noteTitle.text = note.title
@@ -65,7 +65,7 @@ class ListNotesTableViewController: UITableViewController {
                 // 1
                 let indexPath = tableView.indexPathForSelectedRow!
                 // 2
-                let note = notes[indexPath.row]
+                let note = notes[notes.count - 1 - indexPath.row]
                 // 3
                 let displayNoteViewController = segue.destination as! DisplayNoteViewController
                 // 4
