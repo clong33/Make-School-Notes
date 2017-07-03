@@ -45,13 +45,15 @@ class ListNotesTableViewController: UITableViewController {
         // 4
         cell.noteModTime.text = note.modificationTime!.convertToString()
         
+        cell.notePreview.text = note.content
+        
         return cell
     }
   
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             //1
-            CoreDataHelper.deleteNote(entityName: notes[indexPath.row])
+            CoreDataHelper.deleteNote(entityName: notes[notes.count - 1 - indexPath.row])
             //2
             notes = CoreDataHelper.retrieveNotes()
         }

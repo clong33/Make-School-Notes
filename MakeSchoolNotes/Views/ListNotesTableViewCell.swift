@@ -11,6 +11,7 @@ import UIKit
 class ListNotesTableViewCell: UITableViewCell {
     @IBOutlet weak var noteTitle: UILabel!
     @IBOutlet weak var noteModTime: UILabel!
+    @IBOutlet weak var notePreview: UILabel!
     
     
 }
